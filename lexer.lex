@@ -91,5 +91,11 @@ WHITE = (" "|\t|\n)
 
 <YYINITIAL>{WHITE}  { /* NO HACER NADA */             }
 
+<YYINITIAL>[+]   {return new Token(Token.PLUS)}
+<YYINITIAL>[-]      {return new Token(Token.MINUS)}
+<YYINITIAL>[/]      {return new TOken(Token.DIV)}
+<YYINITIAL>[*]      {return new Token(Token.MULT)}
+<YYINITIAL>[%]      {return new Token(Token.MOD)}
+<YYINTIAL>[]
 <YYINITIAL>.        { return new Token(Token.ERROR);
                       /* todo lo demas es ERROR */ }
